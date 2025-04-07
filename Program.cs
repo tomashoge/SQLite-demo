@@ -8,8 +8,8 @@ var dbContent = await dbService.GetAsync();
 dbContent.ForEach(x => Console.WriteLine(x.FullName));
 
 Console.WriteLine("---Add records---");
-await dbService.AddAsync(new PersonModel() { FirstName = "David", LastName = "Smith", Created = DateTimeOffset.Now });
-await dbService.AddAsync(new PersonModel() { FirstName = "Peter", LastName = "Window", Created = DateTimeOffset.Now });
+await dbService.AddAsync(new PersonModel() { FirstName = "David", LastName = "Smith" });
+await dbService.AddAsync(new PersonModel() { FirstName = "Peter", LastName = "Window" });
 dbContent = await dbService.GetAsync();
 dbContent.ForEach(x => Console.WriteLine(x.FullName));
 
