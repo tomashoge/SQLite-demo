@@ -4,16 +4,16 @@ namespace SQLite_demo.Services
 {
     class PersonService : BaseService
     {
-        public async Task<int> AddAsync(PersonModel PersonModel)
+        public async Task<int> AddAsync(PersonModel personModel)
         {
             await SetUpDatabase();
-            return await dbConnection.InsertAsync(PersonModel);
+            return await dbConnection.InsertAsync(personModel);
         }
 
-        public async Task<int> DeleteAsync(PersonModel PersonModel)
+        public async Task<int> DeleteAsync(PersonModel personModel)
         {
             await SetUpDatabase();
-            return await dbConnection.DeleteAsync(PersonModel);
+            return await dbConnection.DeleteAsync(personModel);
         }
 
         public async Task<List<PersonModel>> GetAsync()
@@ -22,10 +22,10 @@ namespace SQLite_demo.Services
             return await dbConnection.Table<PersonModel>().ToListAsync();
         }
 
-        public async Task<int> UpdateAsync(PersonModel PersonModel)
+        public async Task<int> UpdateAsync(PersonModel personModel)
         {
             await SetUpDatabase();
-            return await dbConnection.UpdateAsync(PersonModel);
+            return await dbConnection.UpdateAsync(personModel);
         }
     }
 }
